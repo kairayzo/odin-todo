@@ -1,0 +1,465 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Roboto, sans-serif;
+    --todo-gridgap: 0.6rem;
+    --theme-red: #E0175A;
+    --theme-orange: #ECB329;
+    --theme-blue: #33C6F1;
+    --theme-green: #29B77F;
+    --theme-gray: rgb(234, 234, 234);
+}
+
+body {
+    width: 100vw;
+    min-height: 100vh;
+    display: grid;
+    grid-template-areas: 
+        'sidebar header'
+        'sidebar content';
+    grid-template-rows: 4rem 1fr;
+    grid-template-columns: 16rem 1fr;
+    overflow: hidden;
+}
+
+#header {
+    /* background-color: orange; */
+    border-bottom: var(--theme-gray) solid 0.2rem;
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+}
+
+#sidebar {
+    /* background-color: blue; */
+    grid-area: sidebar;
+    border-right: var(--theme-gray) solid 0.2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+#content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-area: content;
+    justify-items: center;
+}
+
+.with-form {
+    grid-template-columns: 1fr 24rem;
+    grid-template-areas: 'content form';
+}
+
+#form {
+    font-size: 1rem;
+    padding: 1rem;
+    border-left: var(--theme-gray) solid 0.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    grid-area: form;
+}
+
+.header-logo-container {
+    height: 100%;
+    width: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    width: 50px;
+}
+
+.logo-container {
+    padding: 0rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-title {
+    width: 100%;
+    font-size: 2rem;
+}
+
+#user-container {
+    padding: 0rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user-icon {
+    border-radius: 50%;
+}
+
+#user-name {
+    font-size: 1.4rem;
+}
+
+.project-container {
+    max-width: 600px;
+    width: 100%;
+    padding: 2rem 3rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.project-title-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.project-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.project-add-todo-btn {
+    color: gray;
+    font-size: 1rem;
+    text-align: left;
+    border: solid 1px var(--theme-gray);
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: inherit;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+}
+
+.project-add-todo-btn:hover {
+    color: darkgray;
+}
+
+.project-todo-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.todo-container {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: var(--todo-gridgap);
+    cursor: pointer;
+}
+
+.todo-title-container {
+    display: grid;
+    grid-template-areas: 
+        'checkbox title info';
+    grid-template-columns: 1rem 1fr auto;
+    grid-gap: 1rem;
+    align-items: center;
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-area: title */
+}
+
+.todo-checkbox {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    cursor: pointer;
+    grid-area: checkbox;
+}
+
+.todo-checkbox:hover {
+    background-color: lightgray;
+}
+
+.todo-title {
+    font-weight: bold;
+    line-height: 1.5rem;
+    grid-area: title
+}
+
+.todo-info-container {
+    display: flex;
+    gap: 1rem;
+    grid-area: info
+}
+
+.todo-duedate {
+    width: 100px;
+}
+
+.todo-priority-container {
+    width: 60px;
+    display: flex;
+    gap: 0.7rem;
+}
+
+.todo-desc {
+    padding-left: 2rem;
+    grid-area: desc;
+}
+
+#todo-form-title-container {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#todo-form-title {
+    padding: 0 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    width: 100%;
+    max-width: 300px;
+}
+
+#todo-form-info-container {
+    display: flex;
+    gap: 1rem;
+}
+
+#todo-form-duedate-container {
+    display: flex;
+    gap: 0.5rem;
+}
+
+#todo-form-priority-container {
+    width: 60px;
+    display: flex;
+    gap: 0.5rem;
+}
+
+#todo-form-desc-container {
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+#todo-form-desc {
+    padding: 0 0.5rem;
+    font-size: 1rem;
+    flex: 1
+}
+
+#todo-form-duedate-container {
+    width: 100px;
+}
+
+#todo-form-save-btn {
+    font-size: 1rem;
+    width: 60px;
+    padding: 0rem auto;
+}
+
+#todo-form-close-btn {
+    font-size: 1rem;
+    width: 90px;
+    padding: 0rem auto;
+}
+
+/* #sidebar-projects-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: lightgray;
+    padding: 2rem 1rem;
+} */
+
+#sidebar-title-container {
+    margin-bottom: 1rem;
+    display: grid;
+    grid-template-areas: 'title button';
+    grid-template-columns: auto 3rem;
+    gap: 1rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+#sidebar-title {
+    padding-left: 1rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    grid-area: title;
+}
+
+#hide-sidebar-btn, #show-sidebar-btn{
+    font-size: 1.4rem;
+    padding: 0 1rem;
+    width: 1rem;
+    grid-area: button;
+}
+
+#sidebar-projects {
+    margin-bottom: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-project {
+    padding: 0.5rem 1rem;
+    display: grid;
+    grid-template-columns: auto 20px 20px;
+    font-size: 1.2rem;
+    gap: 1rem;
+    cursor: pointer;
+}
+
+.sidebar-edit-btn, .sidebar-delete-btn {
+    opacity: 0.3;
+}
+
+.sidebar-edit-btn:hover, .sidebar-delete-btn:hover {
+    opacity: 1;
+}
+
+.segment {
+    height: 0.3rem;
+    padding: 0.1rem 0;
+    background-color: inherit;
+}
+
+.hovering {
+    background-color: var(--theme-blue);
+}
+
+.selected {
+    background-color: var(--theme-gray);
+    margin: 0 0.5rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+}
+
+#sidebar-add-project-btn {
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    display: grid;
+    grid-template-columns: 1rem auto;
+    gap: 1rem;
+    cursor: pointer;
+}
+
+#hide-sidebar-btn, #show-sidebar-btn,
+#project-form-add-btn, #project-form-close-btn,
+#sidebar-add-project-icon, 
+.sidebar-arrange-icon, .sidebar-edit-btn, .sidebar-delete-btn,
+#project-form-close-btn, #project-form-add-btn,
+.todo-arrange, .todo-priority-icon,
+#form-close-btn
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#project-form {
+    display: flex;
+    gap: 1rem;
+}
+
+#project-form-title {
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    width: 100%;
+    border: none;
+}
+
+#project-form-title:focus {
+    outline: none;
+}
+
+#form-title-container {
+    /* height: 4rem; */
+    display: grid;
+    grid-template-columns: 1fr 1rem;
+    align-items: center;
+    gap: 1rem;
+
+}
+
+#form-title {
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    border: 0.1rem solid var(--theme-gray);
+    border-radius: 0.2rem;
+}
+
+#form-desc {
+    padding: 0.5rem;
+    font-size: 1rem;
+    width: 100%;
+    border: 0.1rem solid var(--theme-gray);
+    border-radius: 0.2rem;
+}
+
+#form-project, #form-duedate {
+    padding: 0 0.5rem;
+    font-size: 1rem;
+}
+
+#form-project-container, #form-duedate-container{
+    display: grid;
+    grid-template-columns: 100px 150px;
+}
+
+#form-priority-container {
+    display: grid;
+    grid-template-columns: 100px repeat(4, 50px);
+}
+
+#form-priority-container div:not(:first-child) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#form-priority-container input {
+    display: none;
+}
+
+#form-priority-container label {
+    opacity: 0.1;
+}
+
+#form-priority-container label.selected {
+    opacity: 1;
+    /* border: 2px solid black */
+}
+
+#form-actions-container {
+    height: 100%;
+    display: flex;
+    align-items: end;
+    gap: 1rem;
+}
+
+#form-actions-container button{
+    font-weight: bold;
+    height: min-content;
+    font-size: 1rem;
+    padding: 0.7rem 1rem;
+    border-radius: 0.5rem;
+    border: 0.1rem solid var(--theme-gray);
+    flex: 1;
+    cursor: pointer;
+}
+
+#form-delete-btn {
+    background-color: inherit;
+}
+
+#form-save-btn {
+    background-color: gold;
+}

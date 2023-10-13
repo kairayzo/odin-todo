@@ -1,0 +1,24 @@
+colour scheme:
+blue, green, yellow, and orange
+
+todos:
+Classes
+Properties: title, description, dueDate and priority
+Optional: notes, checklist
+
+projects:
+default project
+create new project
+
+separate your application logic 
+(i.e. creating new todos, setting todos as complete, changing todo priority etc.)
+ from the DOM-related stuff, so keep all of those things in separate modules.
+
+user interface
+view all projects
+view all todos in each project (probably just the title and duedate… 
+perhaps changing color for different priorities)
+expand a single todo to see/edit its details
+delete a todo
+rearranging projects / todos
+optional: light/dark mode, tasks done tracker
