@@ -1,5 +1,4 @@
 import {generateElement} from "./helper";
-import Sidebar from "./sidebar";
 
 export default function Header() {
 
@@ -24,13 +23,12 @@ export default function Header() {
     
 
     const iconContainer = generateElement('div','logo-container')
-    const icon = generateElement('img','logo','../dist/images/logo.png','Todo App icon')
+    const icon = generateElement('img','logo','./images/logo.png','Todo App icon')
     const title = generateElement('div','logo-title','','My Todo')
     
     const userContainer = generateElement('div','','user-container')
     const userIcon = generateElement('div','user-icon')
     userIcon.innerHTML = '<i class="fa-solid fa-user fa-xl"></i>'
-    // const userName = generateElement('div','','user-name','kairayzo')
 
     iconContainer.append(icon, title)
     userContainer.append(userIcon)

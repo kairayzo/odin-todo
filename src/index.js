@@ -3,6 +3,7 @@ import Header from "./header"
 import Sidebar, { loadProjects } from './sidebar'
 import Content from './content'
 import { loadContent } from './content'
+
 // localStorage.removeItem('todoList')
 if (localStorage.getItem('todoList')) {
 

@@ -16,6 +16,7 @@ module.exports = {
                 <!DOCTYPE html>
                 <html>
                     <head>
+                        <title>My Todo</title>
                         <script src="https://kit.fontawesome.com/b9e56c62e2.js" crossorigin="anonymous"></script>
                     </head>
                 </html>

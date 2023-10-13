@@ -5,7 +5,6 @@ import { clearSelected } from "./helper"
 import editTodo from "./todo/editTodo"
 import newTodo from "./todo/newTodo"
 import { loadContent } from "./content"
-import deleteProject from "./project/deleteProject"
 import deleteTodo from "./todo/deleteTodo"
 
 export default function Form(project,title='',desc='',dueDate='',priority='4',id='') {
@@ -163,7 +162,6 @@ export default function Form(project,title='',desc='',dueDate='',priority='4',id
     formDeleteBtn.addEventListener('click',(e)=>removeTodo(e,project,id))
     formSaveBtn.type = 'submit'
     form.addEventListener('submit',(e)=>submitTodoForm(e,id))
-    // form.addEventListener('keydown',(e)=>submitTodoForm(e,id))
 
     const formActionsContainer = generateElement('div','','form-actions-container')
     formActionsContainer.append(formDeleteBtn,formSaveBtn)
